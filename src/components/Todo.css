@@ -1,0 +1,18 @@
+@import './css-shared/variables.css';
+
+.container {
+  padding: .5em;
+  cursor: pointer;
+}
+
+.completedToDo {
+  padding-right: 1.5em;
+  display: inline-block;
+  min-width: 70%;
+}
+
+.deleteToDo {
+  padding: .5em .5em .5em 0;
+  color: var(--important);
+  display: inline-block;
+}
