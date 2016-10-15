@@ -1,6 +1,5 @@
 import React, { Component, PropTypes } from 'react';
 import CSSModules from 'react-css-modules';
-import { List } from 'immutable';
 
 
 import Todo from './Todo';
@@ -51,12 +50,12 @@ class TodoList extends Component {
         <ul styleName='list'>
           {this.props.todosList.map(t => (
             <Todo
-              key={t.get('id')}
-              isDone={t.get('isDone')}
-              text={t.get('text')}
+              key={t.id}
+              isDone={t.isDone}
+              text={t.text}
               handleClick={this.handleClick.bind(this)}
               handleDelete={this.handleDelete.bind(this)}
-              id={t.get('id')}
+              id={t.id}
             />
           ))}
         </ul>
@@ -80,7 +79,7 @@ class TodoList extends Component {
 
 
 TodoList.propTypes = {
-  todosList: PropTypes.instanceOf(List),
+  todosList: PropTypes.array,
   addToDo: PropTypes.func,
   toggleToDo: PropTypes.func,
   deleteToDo: PropTypes.func
