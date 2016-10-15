@@ -18,7 +18,7 @@ export function addToDo (text) {
   }
 }
 
-export function toggleToDo(todoId) {
+export function toggleToDo (todoId) {
   return {
     type: TOGGLE_TODO,
     payload: {
@@ -27,7 +27,7 @@ export function toggleToDo(todoId) {
   }
 }
 
-export function deleteToDo(todoId) {
+export function deleteToDo (todoId) {
   return {
     type: DELETE_TODO,
     payload: {
