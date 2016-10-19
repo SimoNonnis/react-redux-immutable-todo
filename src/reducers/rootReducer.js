@@ -7,7 +7,7 @@ const initialState = {
   ]
 };
 
-export const todoApp = (state = initialState, action) => {
+const rootReducer = (state = initialState, action) => {
   switch (action.type) {
     case 'ADD_TODO':
       return Object.assign({}, state, {
@@ -16,31 +16,33 @@ export const todoApp = (state = initialState, action) => {
           action.payload
         ]
       })
-    case 'TOGGLE_TODO':
-      return Object.assign({}, state, {
-        data: state.data.map(todo => {
-          if (action.payload.id === todo.id) {
-            return Object.assign({}, todo, {
-              isDone: !todo.isDone
-            })
-          } else {
-            return todo
-          }
-        })
-      })
-    case 'DELETE_TODO':
-      return Object.assign({}, state, {
-        data: state.data.map(todo => {
-          if (action.payload.id === todo.id) {
-            return Object.assign({}, todo, {
-              todo: null
-            })
-          } else {
-            return todo
-          }
-        })
-      })
+    // case 'TOGGLE_TODO':
+    //   return Object.assign({}, state, {
+    //     data: state.data.map(todo => {
+    //       if (action.payload.id === todo.id) {
+    //         return Object.assign({}, todo, {
+    //           isDone: !todo.isDone
+    //         })
+    //       } else {
+    //         return todo
+    //       }
+    //     })
+    //   })
+    // case 'DELETE_TODO':
+    //   return Object.assign({}, state, {
+    //     data: state.data.map(todo => {
+    //       if (action.payload.id === todo.id) {
+    //         return Object.assign({}, todo, {
+    //           todo: null
+    //         })
+    //       } else {
+    //         return todo
+    //       }
+    //     })
+    //   })
     default:
       return state
   }
 }
+
+export default rootReducer;

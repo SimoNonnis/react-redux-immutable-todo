@@ -9,17 +9,15 @@ import styles from './TodoList.css';
 class TodoList extends Component {
   createToDo (e) {
     e.preventDefault();
-    const uid = () => Math.random().toString(34).slice(2);
+
     const text = this.getInput.value;
     const isLongEnough = text.length > 3;
 
     if (isLongEnough) {
-      const todo = {
-        id: uid(),
-        isDone: false,
-        text: text
-      }
-      this.props.addToDo(todo);
+      // helper
+      const uID = Math.random().toString(32).slice(2);
+
+      this.props.addToDo(text, uID);
       this.addToDoForm.reset();
     }
   }
@@ -48,7 +46,7 @@ class TodoList extends Component {
           <button styleName='addToDo' type='submit'>+ Add</button>
         </form>
         <ul styleName='list'>
-          {this.props.todosList.map(t => (
+          {this.props.data.map(t => (
             <Todo
               key={t.id}
               isDone={t.isDone}
@@ -62,24 +60,13 @@ class TodoList extends Component {
       </div>
     )
   }
-
-
-
-
 }
 
 
 
 
-
-
-
-
-
-
-
 TodoList.propTypes = {
-  todosList: PropTypes.array,
+  data: PropTypes.array,
   addToDo: PropTypes.func,
   toggleToDo: PropTypes.func,
   deleteToDo: PropTypes.func

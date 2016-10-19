@@ -1,7 +1,7 @@
 import { createStore } from 'redux';
-import rootReducer from './reducers';
+import rootReducer from './reducers/rootReducer';
 
-//import { addToDo, toggleToDo, deleteToDo } from './actions';
+
 
 let store = createStore(rootReducer);
 
