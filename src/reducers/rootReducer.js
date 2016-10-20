@@ -30,13 +30,11 @@ const rootReducer = (state = initialState, action) => {
       })
     case 'DELETE_TODO':
       return Object.assign({}, state, {
-        data: state.data.filter(todo => {
-          return action.payload.id !== todo.id
-        })
+        data: state.data.filter(todo => action.payload.id !== todo.id)
       })
     default:
       return state
   }
-}
+};
 
 export default rootReducer;
