@@ -1,6 +1,6 @@
 // action
 const ADD_TODO = 'ADD_TODO';
-// const TOGGLE_TODO = 'TOGGLE_TODO';
+const TOGGLE_TODO = 'TOGGLE_TODO';
 // const DELETE_TODO = 'DELETE_TODO';
 
 
@@ -16,14 +16,14 @@ export function addToDo (text, uID) {
   }
 }
 
-// export function toggleToDo (todoId) {
-//   return {
-//     type: TOGGLE_TODO,
-//     payload: {
-//       id: todoId
-//     }
-//   }
-// }
+export function toggleToDo (todoId) {
+  return {
+    type: TOGGLE_TODO,
+    payload: {
+      id: todoId
+    }
+  }
+}
 //
 // export function deleteToDo (todoId) {
 //   return {

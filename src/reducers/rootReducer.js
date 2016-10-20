@@ -16,18 +16,18 @@ const rootReducer = (state = initialState, action) => {
           action.payload
         ]
       })
-    // case 'TOGGLE_TODO':
-    //   return Object.assign({}, state, {
-    //     data: state.data.map(todo => {
-    //       if (action.payload.id === todo.id) {
-    //         return Object.assign({}, todo, {
-    //           isDone: !todo.isDone
-    //         })
-    //       } else {
-    //         return todo
-    //       }
-    //     })
-    //   })
+    case 'TOGGLE_TODO':
+      return Object.assign({}, state, {
+        data: state.data.map(todo => {
+          if (action.payload.id === todo.id) {
+            return Object.assign({}, todo, {
+              isDone: !todo.isDone
+            })
+          } else {
+            return todo
+          }
+        })
+      })
     // case 'DELETE_TODO':
     //   return Object.assign({}, state, {
     //     data: state.data.map(todo => {
