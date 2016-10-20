@@ -28,18 +28,12 @@ const rootReducer = (state = initialState, action) => {
           }
         })
       })
-    // case 'DELETE_TODO':
-    //   return Object.assign({}, state, {
-    //     data: state.data.map(todo => {
-    //       if (action.payload.id === todo.id) {
-    //         return Object.assign({}, todo, {
-    //           todo: null
-    //         })
-    //       } else {
-    //         return todo
-    //       }
-    //     })
-    //   })
+    case 'DELETE_TODO':
+      return Object.assign({}, state, {
+        data: state.data.filter(todo => {
+          return action.payload.id !== todo.id
+        })
+      })
     default:
       return state
   }
