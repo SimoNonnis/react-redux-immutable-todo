@@ -30,13 +30,13 @@
     "html-webpack-plugin",
     "http-server"
   ],
-  "homepage": "https://github.com/SimoNonnis/react-redux-immutable-todo#readme",
+  "homepage": "https://github.com/SimoNonnis/react-redux-todo#readme",
   "repository": {
     "type": "git",
-    "url": "https://github.com/SimoNonnis/react-redux-immutable-todo"
+    "url": "https://github.com/SimoNonnis/react-redux-todo"
   },
   "bugs": {
-    "url": "https://github.com/SimoNonnis/react-redux-immutable-todo/issues"
+    "url": "https://github.com/SimoNonnis/react-redux-todo/issues"
   },
   "dependencies": {
     "babel-runtime": "^6.6.1",
