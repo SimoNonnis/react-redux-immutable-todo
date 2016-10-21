@@ -1,7 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import CSSModules from 'react-css-modules';
 
-
 import Todo from './Todo';
 
 import styles from './TodoList.css';
@@ -45,18 +44,21 @@ class TodoList extends Component {
           />
           <button styleName='addToDo' type='submit'>+ Add</button>
         </form>
-        <ul styleName='list'>
-          {this.props.data.map(t => (
-            <Todo
-              key={t.id}
-              isDone={t.isDone}
-              text={t.text}
-              handleClick={this.handleClick.bind(this)}
-              handleDelete={this.handleDelete.bind(this)}
-              id={t.id}
-            />
-          ))}
-        </ul>
+        {this.props.data ?
+          (<ul styleName='list'>
+            {this.props.data.map(t => (
+              <Todo
+                key={t.id}
+                isDone={t.isDone}
+                text={t.text}
+                handleClick={this.handleClick.bind(this)}
+                handleDelete={this.handleDelete.bind(this)}
+                id={t.id}
+              />
+            ))}
+          </ul>)
+          : null
+        }
       </div>
     )
   }
@@ -72,4 +74,7 @@ TodoList.propTypes = {
   deleteToDo: PropTypes.func
 }
 
-export default CSSModules(TodoList, styles, {allowMultiple: true});
+export default CSSModules(TodoList, styles, {
+  allowMultiple: true,
+  errorWhenNotFound: false
+});
